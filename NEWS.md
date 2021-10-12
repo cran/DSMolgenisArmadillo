@@ -1,3 +1,5 @@
+# DSMolgenisArmadillo 1.3.6
+
 # DSMolgenisArmadillo 1.3.5
 
 * Upgrade to DSI 1.2

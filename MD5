@@ -1,13 +1,13 @@
-2697f5046b65146edaa159b0f1d3fe35 *DESCRIPTION
+db2f8baa7c2cbdc5a21ee60066ca3f63 *DESCRIPTION
 9e33ca062318a776c90e260845f37778 *NAMESPACE
-62dfb708ecd192e0caaf05cc32c2cc49 *NEWS.md
+e051af237fbbf91b788506395d0a0779 *NEWS.md
 d1687e63f77e29708414dd669fc4a6cb *R/ArmadilloConnection.R
 34846e20c9082193274120335e82962d *R/ArmadilloDriver.R
 aed05a1296a5a5d3990f60b32bcc27f4 *R/ArmadilloOAuth.R
 084807ad855497ea032c6114f1afd88f *R/ArmadilloResult.R
 e0ef681901465d24f47f9139cb2c086a *R/DSMolgenisArmadillo-package.R
 515956df5f3fa7563052d317d44584e1 *R/utils.R
-3f3dc53728ce4a2cb4ad45cc0af616c1 *README.md
+0298fd7fa317168f747f2d077895c93c *README.md
 f5582024971463dbe5f65efb28baee80 *build/vignette.rds
 7f2070d3d2b1847de8103a624fa0b956 *inst/doc/DSMolgenisArmadillo.Rmd
 94325cb2dec47ac7f32e759fbb182894 *inst/doc/DSMolgenisArmadillo.html
@@ -18,7 +18,7 @@ e9e69f3f658eadd6f70a3370060a1232 *inst/doc/development.html
 dd4eb044c5a10e1763eef5b8c65b01da *man/ArmadilloConnection-class.Rd
 77053ff9eaccf0af84dd5ff8c19788d0 *man/ArmadilloDriver-class.Rd
 9837071c0015a72fda5db746902cfe70 *man/ArmadilloResult-class.Rd
-662a290daa5d78a28573d5f9a1b8b766 *man/DSMolgenisArmadillo-package.Rd
+d968262f8cb81d918bfc276accd26ba3 *man/DSMolgenisArmadillo-package.Rd
 ce3038825093b55aa481e1d123fbe05e *man/armadillo.Rd
 591b54a36ed66210f43e609872e14c44 *man/armadillo.get_token.Rd
 46727bcd1431a1b7bcad81d25a47f94e *man/dsAggregate-ArmadilloConnection-method.Rd
