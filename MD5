@@ -1,10 +1,10 @@
-db2f8baa7c2cbdc5a21ee60066ca3f63 *DESCRIPTION
+da14f2200a6a13d61162b1d64edd827c *DESCRIPTION
 9e33ca062318a776c90e260845f37778 *NAMESPACE
-e051af237fbbf91b788506395d0a0779 *NEWS.md
+251d1c08f11c9333e2db054af0f050fb *NEWS.md
 d1687e63f77e29708414dd669fc4a6cb *R/ArmadilloConnection.R
 34846e20c9082193274120335e82962d *R/ArmadilloDriver.R
 aed05a1296a5a5d3990f60b32bcc27f4 *R/ArmadilloOAuth.R
-084807ad855497ea032c6114f1afd88f *R/ArmadilloResult.R
+505cafb74df9adbc5743c9b0a3e77e85 *R/ArmadilloResult.R
 e0ef681901465d24f47f9139cb2c086a *R/DSMolgenisArmadillo-package.R
 515956df5f3fa7563052d317d44584e1 *R/utils.R
 0298fd7fa317168f747f2d077895c93c *README.md
@@ -51,7 +51,7 @@ d8ad139ef3f0d6fe78a0a4f9f285970f *man/dsRmWorkspace-ArmadilloConnection-method.R
 c68f7896f822176d0c72425ddca43cba *tests/testthat/test-ArmadilloConnection.R
 9282170401e39b398ee69aef8f96f1a4 *tests/testthat/test-ArmadilloDriver.R
 c14d86fab94ba3cc6590dd8844afd6a6 *tests/testthat/test-ArmadilloOAuth.R
-450b1e1b2d96d97acbfea2efab8bbb26 *tests/testthat/test-ArmadilloResult.R
+ab5af7962894840594ceb5d1403e04b5 *tests/testthat/test-ArmadilloResult.R
 5288578244a77e802a77f591e9604320 *tests/testthat/test-utils.R
 05249dc9dd6b6597762ed39fa510a396 *vignettes/DSMolgenisArmadillo-create-a-heatmap-1.png
 e7283d70d55bda1c1ac493abeba86d2e *vignettes/DSMolgenisArmadillo-create-a-histogram-1.png
