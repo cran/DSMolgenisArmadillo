@@ -1,4 +1,8 @@
-# DSMolgenisArmadillo 1.3.7
+# DSMolgenisArmadillo 1.4.0
+
+# DSMolgenisArmadillo 1.4.0
+* Add profiles
+* Update DSI to 1.3.0
 
 # DSMolgenisArmadillo 1.3.7
 
