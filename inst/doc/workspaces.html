@@ -147,11 +147,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DSMolgenisArmadillo)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># specify server url</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>armadillo_url <span class="ot">&lt;-</span> <span class="st">&quot;https://armadillo.dev.molgenis.org&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>armadillo_url <span class="ot">&lt;-</span> <span class="st">&quot;https://armadillo-demo.molgenis.net/&quot;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get token from central authentication server</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>token <span class="ot">&lt;-</span> <span class="fu">armadillo.get_token</span>(armadillo_url)</span></code></pre></div>
-<pre><code>## [1] &quot;We&#39;re opening a browser so you can log in with code QR4XJ9&quot;</code></pre>
+<pre><code>## [1] &quot;We&#39;re opening a browser so you can log in with code R8VPYX&quot;</code></pre>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># build the login dataframe</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>builder <span class="ot">&lt;-</span> DSI<span class="sc">::</span><span class="fu">newDSLoginBuilder</span>()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>builder<span class="sc">$</span><span class="fu">append</span>(<span class="at">server =</span> <span class="st">&quot;armadillo&quot;</span>,</span>
@@ -163,57 +163,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># create loginframe</span></span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>logindata <span class="ot">&lt;-</span> builder<span class="sc">$</span><span class="fu">build</span>()</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> <span class="fu">datashield.login</span>(<span class="at">login =</span> logindata)</span></code></pre></div>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> DSI<span class="sc">::</span><span class="fu">datashield.login</span>(<span class="at">login =</span> logindata)</span></code></pre></div>
 <pre><code>## 
 ## Logging into the collaborating servers</code></pre>
 <pre><code>## 
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Login armadillo [==================================&gt;-----------------------------------]  50% / 0s
   Logged in all servers [================================================================] 100% / 0s</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.assign.table</span>(<span class="at">conns =</span> conns,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">table =</span> <span class="st">&quot;gecko/2_1-core-1_0/nonrep&quot;</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">symbol =</span> <span class="st">&quot;J&quot;</span>,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">variables =</span> <span class="fu">c</span>(<span class="st">&quot;recruit_age&quot;</span>, <span class="st">&quot;child_id&quot;</span>))</span></code></pre></div>
 <pre><code>## 
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Checking armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (J &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (J &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (J &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (J &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Finalizing assignment armadillo (J &lt;- `gecko/2_1-core-1_0/nonrep`) [=========&gt;---------]  50% / 0s
   Assigned all table (J &lt;- ...) [========================================================] 100% / 0s</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.logout</span>(conns, <span class="at">save =</span> <span class="st">&quot;my-workspace&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> <span class="fu">datashield.login</span>(<span class="at">logins =</span> logindata,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">assign =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                          <span class="at">restore =</span> <span class="st">&quot;my-workspace&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.logout</span>(conns, <span class="at">save =</span> <span class="st">&quot;my-workspace&quot;</span>)</span></code></pre></div>
 <pre><code>## 
-## Logging into the collaborating servers</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.symbols</span>(conns)</span></code></pre></div>
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Logout armadillo [=================================&gt;-----------------------------------]  50% / 0s
+  Logged out from all servers [==========================================================] 100% / 0s</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> DSI<span class="sc">::</span><span class="fu">datashield.login</span>(<span class="at">logins =</span> logindata,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>                          <span class="at">assign =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                          <span class="at">restore =</span> <span class="st">&quot;my-workspace&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## Logging into the collaborating servers
+## 
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Login armadillo [==================================&gt;-----------------------------------]  50% / 0s
+  Logged in all servers [================================================================] 100% / 0s</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.symbols</span>(conns)</span></code></pre></div>
 <pre><code>## $armadillo
 ## [1] &quot;J&quot;</code></pre>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-version-2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-version-2&quot;</span>)</span></code></pre></div>
 <p>You can overwrite workspaces using the same name again when saving the workspace.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.logout</span>(conns)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.logout</span>(conns)</span></code></pre></div>
 <pre><code>## 
-  Logged out from all servers [==========================================================] 100% / 1s</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> <span class="fu">datashield.login</span>(<span class="at">logins =</span> logindata)</span></code></pre></div>
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Logout armadillo [=================================&gt;-----------------------------------]  50% / 0s
+  Logged out from all servers [==========================================================] 100% / 0s</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>conns <span class="ot">&lt;-</span> DSI<span class="sc">::</span><span class="fu">datashield.login</span>(<span class="at">logins =</span> logindata)</span></code></pre></div>
 <pre><code>## 
-## Logging into the collaborating servers</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.assign.table</span>(<span class="at">conns =</span> conns,</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">table =</span> <span class="st">&quot;gecko/2_1-core-1_0/nonrep&quot;</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">symbol =</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
+## Logging into the collaborating servers
+## 
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Login armadillo [==================================&gt;-----------------------------------]  50% / 0s
+  Logged in all servers [================================================================] 100% / 0s</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.assign.table</span>(<span class="at">conns =</span> conns,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">table =</span> <span class="st">&quot;gecko/2_1-core-1_0/nonrep&quot;</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">symbol =</span> <span class="st">&quot;H&quot;</span>)</span></code></pre></div>
 <pre><code>## 
+   [-------------------------------------------------------------------------------------]   0% / 0s
+  Checking armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (H &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (H &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (H &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Waiting...  (H &lt;- ...) [---------------------------------------------------------------]   0% / 0s
+  Checking armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [--------------------------------]   0% / 0s
+  Finalizing assignment armadillo (H &lt;- `gecko/2_1-core-1_0/nonrep`) [=========&gt;---------]  50% / 0s
   Assigned all table (H &lt;- ...) [========================================================] 100% / 0s</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_save</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span></code></pre></div>
 <p>You can list the workspaces as well.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspaces</span>(conns<span class="sc">$</span>armadillo)</span></code></pre></div>
-<pre><code>##             lastAccessDate                               ETag                               name   size user
-## 1 2020-09-08T10:14:42.345Z &quot;79ea8e26a41a0f43716040c5f09466c0&quot; armadillo:my-workspace-overwritten 172072     
-## 2 2020-09-08T10:14:40.907Z &quot;7de51b96e6d15e9ab13b9ef52fe3547f&quot;   armadillo:my-workspace-version-2   3610     
-## 3 2020-09-08T10:14:40.524Z &quot;7de51b96e6d15e9ab13b9ef52fe3547f&quot;             armadillo:my-workspace   3610</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspaces</span>(conns<span class="sc">$</span>armadillo)</span></code></pre></div>
+<pre><code>##                                 name   size           lastAccessDate user
+## 1 armadillo:my-workspace-overwritten 172073 2023-10-24T09:22:41.747Z     
+## 2             armadillo:my-workspace   3611 2023-10-24T09:22:40.615Z     
+## 3   armadillo:my-workspace-version-2   3611 2023-10-24T09:22:40.847Z</code></pre>
 <p>Remove workspaces.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_rm</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspaces</span>(conns)</span></code></pre></div>
-<pre><code>##      server name..armadillo.my.workspace.version.2. name..armadillo.my.workspace. user
-## 1 armadillo        armadillo:my-workspace-version-2        armadillo:my-workspace     
-## 2 armadillo        armadillo:my-workspace-version-2        armadillo:my-workspace     
-##   lastAccessDate..2020.09.08T10.14.40.907Z. lastAccessDate..2020.09.08T10.14.40.524Z. size.3610L size.3610L.1
-## 1                  2020-09-08T10:14:40.907Z                  2020-09-08T10:14:40.524Z       3610         3610
-## 2                  2020-09-08T10:14:40.907Z                  2020-09-08T10:14:40.524Z       3610         3610</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspace_rm</span>(conns, <span class="st">&quot;my-workspace-overwritten&quot;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">datashield.workspaces</span>(conns)</span></code></pre></div>
+<pre><code>##      server name..armadillo.my.workspace. name..armadillo.my.workspace.version.2. user
+## 1 armadillo        armadillo:my-workspace        armadillo:my-workspace-version-2     
+## 2 armadillo        armadillo:my-workspace        armadillo:my-workspace-version-2     
+##   lastAccessDate..2023.10.24T09.22.40.615Z. lastAccessDate..2023.10.24T09.22.40.847Z. size.3611L size.3611L.1
+## 1                  2023-10-24T09:22:40.615Z                  2023-10-24T09:22:40.847Z       3611         3611
+## 2                  2023-10-24T09:22:40.615Z                  2023-10-24T09:22:40.847Z       3611         3611</code></pre>
 
 
 
