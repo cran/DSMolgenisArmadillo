@@ -1,6 +1,6 @@
-321c77d6ecd2cbb89b62e1ffdb829cec *DESCRIPTION
+07f019efa76363f3de771701425a4cc8 *DESCRIPTION
 de83a3039b1c167ea7a80427726e331e *NAMESPACE
-1135d1cdc8f86aeb20df466adeaf35b0 *NEWS.md
+c1cd894b67d5713656faa684264dc923 *NEWS.md
 5522b417b129d3a4490affe0f86ad3c0 *R/ArmadilloConnection.R
 c3dde6dd0cb7a19c959428a02fb63239 *R/ArmadilloDriver.R
 72400553acb98e2661176ff1bb74b03f *R/ArmadilloOAuth.R
@@ -52,7 +52,7 @@ d8ad139ef3f0d6fe78a0a4f9f285970f *man/dsRmWorkspace-ArmadilloConnection-method.R
 e24891bd1e015994141c876e83d1f06b *tests/testthat/helper.R
 8587d4edd30d8300e6bf5e33268a5cfb *tests/testthat/test-ArmadilloConnection.R
 5667411e939cafe11847e6bdff070277 *tests/testthat/test-ArmadilloDriver.R
-e2bd1b26c56b94ef8af17cdbb24f56b7 *tests/testthat/test-ArmadilloOAuth.R
+ed3f518efba3e5cebde9534e4eeee013 *tests/testthat/test-ArmadilloOAuth.R
 73d72e9425b67f18e5542479041d6d86 *tests/testthat/test-ArmadilloResult.R
 99e579f015bc92d70eab722f306c9894 *tests/testthat/test-utils.R
 05249dc9dd6b6597762ed39fa510a396 *vignettes/DSMolgenisArmadillo-create-a-heatmap-1.png

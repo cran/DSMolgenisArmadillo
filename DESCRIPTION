@@ -1,6 +1,6 @@
 Package: DSMolgenisArmadillo
 Type: Package
-Version: 3.0.0
+Version: 3.0.1
 Title: 'DataSHIELD' Client for 'MOLGENIS Armadillo'
 Description: 'DataSHIELD' is an infrastructure and series of R packages that 
     enables the remote and 'non-disclosive' analysis of sensitive research data.
@@ -49,7 +49,7 @@ Collate: 'ArmadilloDriver.R' 'ArmadilloConnection.R' 'ArmadilloOAuth.R'
         'ArmadilloResult.R' 'DSMolgenisArmadillo-package.R' 'utils.R'
 Additional_repositories: https://cran.obiba.org/
 NeedsCompilation: no
-Packaged: 2025-07-24 08:19:35 UTC; tcadman
+Packaged: 2025-09-16 10:10:56 UTC; tcadman
 Author: Mariska Slofstra [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-0400-0468>),
   Sido Haakma [aut] (ORCID: <https://orcid.org/0000-0003-1278-9144>),
@@ -57,4 +57,4 @@ Author: Mariska Slofstra [aut, cre] (ORCID:
   Fleur Kelpin [aut] (ORCID: <https://orcid.org/0000-0003-1527-5130>),
   MOLGENIS org [cph, fnd]
 Repository: CRAN
-Date/Publication: 2025-07-24 09:00:02 UTC
+Date/Publication: 2025-09-16 11:00:23 UTC
