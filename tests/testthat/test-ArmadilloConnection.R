@@ -155,6 +155,24 @@ test_that("dsHasResource returns FALSE if table doesnot exist", {
   )
 })
 
+test_that("dsHasTable returns FALSE if access denied", {
+  head <- mock(list(status_code = 403))
+  with_mocked_bindings(
+    expect_false(dsHasTable(connection, "project/folder/name.parquet")),
+    "HEAD" = head,
+    ".refresh_token_safely" = function(conn) connection
+  )
+})
+
+test_that("dsHasResource returns FALSE if access denied", {
+  head <- mock(list(status_code = 403))
+  with_mocked_bindings(
+    expect_false(dsHasResource(connection, "project/folder/name")),
+    "HEAD" = head,
+    ".refresh_token_safely" = function(conn) connection
+  )
+})
+
 test_that("dsIsAsync returns boolean list", {
   expect_equal(
     dsIsAsync(connection),
@@ -343,6 +361,7 @@ test_that("dsListMethods returns assign methods", {
     class = "function"
   )
 
+  expect_equal(colnames(result), c("name", "value", "version", "package", "type", "class"))
   expect_equivalent(result, expected)
 })
 
@@ -632,5 +651,37 @@ test_that("dsKeepAlive pings server info endpoint", {
               handle = handle,
               path = "/actuator/info",
               config = httr::add_headers("Authorization" = "Bearer token")
+  )
+})
+
+test_that("dsRestoreWorkspace calls /load-workspace endpoint", {
+  post <- mock(list(status_code = 200))
+
+  with_mocked_bindings(
+    dsRestoreWorkspace(connection, "keepit"),
+    "POST" = post,
+    ".refresh_token_safely" = function(conn) connection
+  )
+
+  expect_called(post, 1)
+  expect_args(post, 1,
+              handle = handle,
+              query = list(id = "keepit"),
+              path = "/load-workspace",
+              config = httr::add_headers("Authorization" = "Bearer token"))
+})
+
+test_that("dsRestoreWorkspace handles missing workspace error", {
+  post <- mock(list(
+    status_code = 500,
+    content = list(message = "Not Found")
+  ))
+
+  expect_error(
+    with_mocked_bindings(
+      dsRestoreWorkspace(connection, "nonexistent"),
+      "POST" = post,
+      ".refresh_token_safely" = function(conn) connection
+    )
   )
 })

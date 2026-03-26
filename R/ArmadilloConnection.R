@@ -71,13 +71,12 @@ methods::setMethod(
       path = "/profiles",
       config = httr::add_headers(.get_auth_header(conn))
     )
-    .handle_request_error(response)
+
     if (response$status_code == 404) {
-      # endpoint not implemented, fake it!
-      list(available = "default", current = "default")
-    } else {
-      content(response)
+      return(list(available = "default", current = "default"))
     }
+    .handle_request_error(response)
+    content(response)
   }
 )
 
@@ -129,6 +128,7 @@ methods::setMethod(
       config = httr::add_headers(.get_auth_header(conn))
     )
 
+    if (response$status_code %in% c(403, 404)) return(FALSE)
     .handle_request_error(response)
 
     response$status_code == 200
@@ -181,6 +181,8 @@ methods::setMethod(
       path = paste0("/resources/", resource),
       config = httr::add_headers(.get_auth_header(conn))
     )
+
+    if (response$status_code %in% c(403, 404)) return(FALSE)
     .handle_request_error(response)
 
     response$status_code == 200
@@ -392,7 +394,7 @@ methods::setMethod(
     df <- .list_to_data_frame(content(response))
     df <- .fill_column(df, "type", type)
     df <- .fill_column(df, "class", "function")
-    df <- .rename_column(df, "function", "value")
+    df <- .rename_column(df, "function.", "value")
   }
 )
 
@@ -658,5 +660,31 @@ methods::setMethod(
       config = httr::add_headers(.get_auth_header(conn))
     ), silent = TRUE)
     invisible(NULL)
+  }
+)
+
+#' Restore workspace
+#'
+#' This method implementation for the ArmadilloConnection class sends an authenticated POST request
+#' to the Armadillo /load-workspace endpoint. It reloads a previously saved R session state
+#' (workspace) using the provided name as the identifier.
+#'
+#' @param conn \code{\link{ArmadilloConnection-class}} class object
+#' @param name Name of the workspace.
+#'
+#' @importMethodsFrom DSI dsRestoreWorkspace
+#' @export
+methods::setMethod(
+  "dsRestoreWorkspace", "ArmadilloConnection", function(conn, name) {
+    conn <- .refresh_token_safely(conn)
+
+    restore_response <- POST(
+      handle = conn@handle,
+      query = list(id = name),
+      path = "/load-workspace",
+      config =  httr::add_headers(.get_auth_header(conn))
+    )
+
+    .handle_request_error(restore_response)
   }
 )
