@@ -57,14 +57,17 @@
   } else if (response$status_code == 404) {
     stop("Not found", call. = FALSE)
   } else if (response$status_code == 500) {
-    json_content <- content(response, "text")
+    json_content <- content(response, "text", encoding = "UTF-8")
     stop(paste0("Internal server error: ", json_content), call. = FALSE)
+  } else if (response$status_code == 503) {
+    json_content <- content(response, "text", encoding = "UTF-8")
+    stop(paste0("Service unavailable: ", json_content), call. = FALSE)
   }
 }
 
 #' Unlist character list
 #'
-#' @param character_list
+#' @param character_list list of character values
 #'
 #' @noRd
 .unlist_character_list <- function(character_list) {
